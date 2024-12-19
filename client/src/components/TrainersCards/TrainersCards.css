@@ -1,0 +1,13 @@
+.trainers-photo {
+    width: 200px;
+    height: auto;
+    padding-left: 50px;
+}
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+   
+}

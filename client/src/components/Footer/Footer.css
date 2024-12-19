@@ -1,0 +1,85 @@
+/* Загальний контейнер футера */
+.footer {
+    background-color: #1c1c1c;
+    color: white;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Секції футера */
+  .footer-section {
+    flex: 1;
+    margin: 0 15px;
+  }
+  
+  .footer-section h3,
+  .footer-section h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #f2f2f2;
+  }
+  
+  /* Графік роботи */
+  .working-hours p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #ccc;
+  }
+  
+  /* Список посилань */
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin: 5px 0;
+    font-size: 1em;
+    cursor: pointer;
+    color: #ff6600;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links li:hover {
+    color: #e05500;
+  }
+  
+  /* Контакти */
+  .contacts {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contacts li {
+    margin: 10px 0;
+    font-size: 0.9em;
+    color: #ccc;
+  }
+  
+  .contacts .icon {
+    color: #ff6600;
+    margin-right: 10px;
+    font-size: 1.2em;
+  }
+  
+
+  .footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url"/assets/images/bg.png"; /* Замінити шлях на ваш */
+    opacity: 0.1;
+    z-index: 0;
+  }
+  

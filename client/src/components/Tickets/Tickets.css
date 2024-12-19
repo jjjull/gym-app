@@ -1,0 +1,41 @@
+/* Додаткові стилі для цін */
+.price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+
+  .buy-button {
+    margin: 30px;
+    background: #8b8887;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 0.9em;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .buy-button:hover {
+    background: #a7a7a6;
+  }
+  .title-button {
+    display: inline-block;
+    background-color: #ff6600; 
+    color: white; 
+    text-align: center; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+    height: 30px;
+    margin: 30px;
+    padding-bottom: 20px;
+  }
+  
+  .title-button:hover {
+    background-color: #e05500; /* Темніший помаранчевий при наведенні */
+  }
+  
