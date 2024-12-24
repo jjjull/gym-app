@@ -1,11 +1,24 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import "./Header.css";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ scrollToSection, refs = {} }) => {
     const [showDropdown, setShowDropdown] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
+
     const toggleDropdown = () => {
         setShowDropdown((prevState) => !prevState);
+    };
+
+    const handleNavigation = (targetSection) => {
+        if (location.pathname === "/") {
+            // Якщо користувач уже на головній сторінці, скролимо
+            scrollToSection(refs[targetSection]);
+        } else {
+            // Якщо користувач на іншій сторінці, переходимо на Home з targetSection
+            navigate("/", { state: { targetSection } });
+        }
     };
 
     return (
@@ -18,14 +31,15 @@ const Header = () => {
             }}
         >
             <div className="navbar-logo">
-                <Link to="/">Sport
-                    <br></br>Club</Link>
+                <Link to="/">Sport<br />Club</Link>
             </div>
             <ul className="navbar-links">
-                <li><Link to="/schedule">Розклад</Link></li>
-                <li><Link to="/trainings">Тренування</Link></li>
-                <li><Link to="/trainers">Тренери</Link></li>
-                <li><Link to="/subscriptions">Абонементи</Link></li>
+                <li>
+                    <Link to="/schedule#schedule-table">Розклад</Link>
+                </li>
+                <li onClick={() => handleNavigation("trainingsRef")}>Тренування</li>
+                <li onClick={() => handleNavigation("trainersRef")}>Тренери</li>
+                <li onClick={() => handleNavigation("ticketsRef")}>Абонементи</li>
             </ul>
 
             <div className="navbar-login" onClick={toggleDropdown}>
@@ -39,10 +53,10 @@ const Header = () => {
                 )}
             </div>
 
-            <div className="hero-text">Work Hard To<br></br> Get Better Life</div>
-            <Link to="/signup" className="hero-button">
+            <div className="hero-text">Work Hard To<br /> Get Better Life</div>
+            <a href="/signup" className="hero-button">
                 Записатись
-            </Link>
+            </a>
         </nav>
     );
 };

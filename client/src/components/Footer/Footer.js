@@ -1,7 +1,8 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
-const Footer = () => {
+const Footer = ({ scrollToSection, refs }) => {
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -19,10 +20,10 @@ const Footer = () => {
         {/* Список посилань */}
         <div className="footer-section">
           <ul className="footer-links">
-            <li>Розклад</li>
-            <li>Тренування</li>
-            <li>Тренери</li>
-            <li>Абонементи</li>
+            <Link to="/schedule">Розклад</Link>
+            <li onClick={() => scrollToSection(refs.trainingsRef)}>Тренування</li>
+            <li onClick={() => scrollToSection(refs.trainersRef)}>Тренери</li>
+            <li onClick={() => scrollToSection(refs.ticketsRef)}>Абонементи</li>
           </ul>
         </div>
 
