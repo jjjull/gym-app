@@ -47,7 +47,7 @@ exports.login = async (req, res) => {
         // Генерація JWT
         const token = jwt.sign(
             { id: user._id, email: user.email },
-            process.env.JWT_SECRET || 'defaultSecretKey', // Використовуйте змінну середовища для секретного ключа
+            process.env.JWT_SECRET || 'defaultSecretKey', 
             { expiresIn: '1h' }
         );
 

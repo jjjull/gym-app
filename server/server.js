@@ -4,21 +4,21 @@ const cors = require('cors');
 
 const app = express();
 
-// Middleware
+
 app.use(bodyParser.json());
 app.use(cors());
 
-// Test route
+// тест route
 app.get('/', (req, res) => {
     res.send('Server is running!');
 });
 
-// Import and use auth routes
-const mongoose = require('./src/db'); // MongoDB connection
+// Імпорт і використання auth routes
+const mongoose = require('./src/db'); // підключення MongoDB 
 const authRoutes = require('./src/routes/auth');
 app.use('/api/auth', authRoutes);
 
-// Start the server
+// старт сервера
 const PORT = 2000;
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
